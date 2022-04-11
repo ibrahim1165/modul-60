@@ -1,0 +1,28 @@
+.Continar-serves{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.servise-title{
+    text-align:center;
+    color:rgb(13, 46, 59);
+}
+
+
+ @media screen and (max-width:576px){
+    .Continar-serves{
+        grid-template-columns: repeat(1, 1fr);
+       margin: 20px;
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
