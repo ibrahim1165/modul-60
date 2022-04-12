@@ -17,7 +17,7 @@ import Expart from '../Expart/Expart';
  ]
 const Exparts = () => {
     return (
-        <div className="container">
+        <div id="exparts" className="container">
             <h2 className="text-primary text-center">Our Expart</h2>
             <div className="row">
                 {
