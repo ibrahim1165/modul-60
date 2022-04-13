@@ -8,10 +8,8 @@ const Servicse = () => {
     useEffect(()=>{
         fetch("cars.json")
         .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            setservicse(data)
-        })
+        .then(data =>setservicse(data)
+        )
     },[])
     return (
         <div>
