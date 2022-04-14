@@ -4,6 +4,9 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firbase.int';
 import SocialLogin from './SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from 'bootstrap';
 
 const Login = () => {
     const [
@@ -41,10 +44,15 @@ const Login = () => {
     const navigateRegister =()=>{
         navigation('/regester')
     }
-    const resetPassword =async()=>{
+    const resetPassword = async()=>{
         const email = emailRef.current.value;
+     if(email){
         await sendPasswordResetEmail(email);
-        alert('Sent email');
+        toast('Sent email');
+     }
+     else{
+         toast('please enter your email')
+     }
     }
 
     return (
@@ -68,9 +76,10 @@ const Login = () => {
 
             </Form>
             <p>New to Genius Car : <Link to="/regester"className="text-primary pe-auto text-decoration-none" onClick={navigateRegister}>please Register.</Link></p>
-            <p>Fotget Password <Link to="/regester"className="text-primary pe-auto text-decoration-none" onClick={resetPassword}>Reset Password</Link></p>
+            <p>Fotget Password <button className=" btn btn-link text-primary pe-auto text-decoration-none" onClick={resetPassword}>Reset Password</button></p>
             <SocialLogin></SocialLogin>
-        </div>
+            <ToastContainer />
+                  </div>
     );
 };
 
