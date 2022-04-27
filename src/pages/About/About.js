@@ -1,4 +1,5 @@
 import React from 'react';
+import Pagetitle from '../Shard/PageTitle/Pagetitle';
 
 const About = () => {
     return (
